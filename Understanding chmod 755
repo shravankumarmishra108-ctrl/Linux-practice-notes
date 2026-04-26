@@ -1,0 +1,45 @@
+## Understanding chmod 755
+
+chmod 755 file.txt
+
+### Numeric Breakdown
+
+755 is divided into three parts:
+
+- 7 → Owner permissions  
+- 5 → Group permissions  
+- 5 → Others permissions  
+
+---
+
+### Permission Values
+
+| Number | Meaning |
+|--------|--------|
+| 4 | Read (r) |
+| 2 | Write (w) |
+| 1 | Execute (x) |
+
+---
+
+### Conversion
+
+- 7 = 4 + 2 + 1 = rwx (read, write, execute)  
+- 5 = 4 + 0 + 1 = r-x (read, execute)  
+
+---
+
+### Final Meaning of chmod 755
+
+- Owner → rwx (full access)  
+- Group → r-x (read and execute)  
+- Others → r-x (read and execute)  
+
+---
+
+### Example
+
+```bash
+touch file.txt
+chmod 755 file.txt
+ls -l file.txt
